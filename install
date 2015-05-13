@@ -13,6 +13,7 @@ fi
 
 make install
 
+cp  -v -f $PROG.sh $PROG_PATH/$PROG.sh
 if [ -f "/etc/init.d/$PROG" ] ;then
 	echo "$MSG_PREFIX not need add to /etc/init.d"
 else

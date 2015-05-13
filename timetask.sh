@@ -15,6 +15,7 @@
 PROG="timetask"
 PROG_PATH="/data/app/timetask" #::# Not need, but sometimes helpful (if $PROG resides in /opt for example).
 PROG_ARGS="$PROG_PATH/$PROG.conf"
+PID_PATH="$PROG_PATH/$PROG.pid"
 MSG_PREFIX=" *"
 
 start() {
@@ -31,7 +32,7 @@ start() {
 stop() {
     if [ -e "$PID_PATH" ]; then
         ## Program is running, so stop it
-        PROG_PATH/$PROG stop
+        $PROG_PATH/$PROG stop
         echo "$MSG_PREFIX $PROG stopped"
     else
         ## Program is not running, exit with error.
